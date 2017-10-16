@@ -6,9 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <style>
-        .stuff {
+        /*.syling {
             text-decoration: line-through;
             font-size: 20px;
+        }*/
+
+        .fade {
+            animation: fading 1s forwards;
+        }
+        @keyframes fading {
+            to{
+            opacity:0;
+            }
         }
 
     </style>
@@ -16,33 +25,43 @@
 </head>
 
 <body>
-    <ul>
-        <li>school</li>
-        <li>dance</li>
-        <li>practice coding</li>
-        <li>Coffee</li>
-        <li>Sleep</li>
-        <li>shower</li>
-        <li>sleep</li>
-    </ul>
 
+    <img src="images/bachata.jpg" alt="bachata">
+    <img src="images/salsa.jpg" alt="salsa">
+    <img src="images/ballet.png" alt="ballet">
+    <img src="images/hiphop.png" alt="hiphop">
+    <img src="images/freestyle.png" alt="freestyle">
 
     <script>
-        let myElements = document.querySelectorAll("li");
+        /*let myToDoList = document.querySelectorAll("li");
         //console.log(myElement)
 
-        myElements.forEach(addClass);
+        myToDoList.forEach(listElement);
 
-        function addClass(oneLi, index) {
-            console.log(oneLi);
+        function listElement(oneLiELement, index) {
+            console.log(oneLiELement);
             //oneLi.classList.add("stuff);
-            oneLi.addEventListener("click", listClicked);
+            oneLiELement.addEventListener("click", elementClicked);
         }
 
-        function listClicked(evt) {
+        function elementClicked(evt) {
             console.log(evt.target);
-            evt.target.classList.toggle("stuff");
+            evt.target.classList.toggle("syling");
+        }*/
+
+        let dances = document.querySelectorAll("img");
+
+        dances.forEach(dance);
+
+        function dance(oneDance,index) {
+            oneDance.addEventListener("click", imgClicked);
         }
+        function imgClicked(evt) {
+            console.log(evt.target);
+            evt.target.classList.toggle("fade");
+        }
+
+
 
     </script>
 </body>
