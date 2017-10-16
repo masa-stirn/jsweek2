@@ -19,6 +19,9 @@
             opacity:0;
             }
         }
+        audio{
+            display: none;
+        }
 
     </style>
 
@@ -32,7 +35,34 @@
     <img src="images/hiphop.png" alt="hiphop">
     <img src="images/freestyle.png" alt="freestyle">
 
+    <audio id="right" controls>
+    <source src="audio/yes.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
     <script>
+        let danceImgs = document.querySelectorAll("img");
+        let mySound = document.querySelector("audio");
+
+        danceImgs.forEach(dance);
+
+        function dance(oneDance,index) {
+            oneDance.addEventListener("click", imgClicked);
+            //oneDance.addEventListener("click", playSound);
+        }
+        function imgClicked(evt) {
+            console.log(evt.target);
+            evt.target.classList.toggle("fade");
+            playSound()
+        }
+
+        function playSound(){
+            let img = document.querySelectorAll(".fade");
+            if(img.length>2){
+                mySound.play();
+            }
+        }
+
         /*let myToDoList = document.querySelectorAll("li");
         //console.log(myElement)
 
@@ -48,20 +78,6 @@
             console.log(evt.target);
             evt.target.classList.toggle("syling");
         }*/
-
-        let dances = document.querySelectorAll("img");
-
-        dances.forEach(dance);
-
-        function dance(oneDance,index) {
-            oneDance.addEventListener("click", imgClicked);
-        }
-        function imgClicked(evt) {
-            console.log(evt.target);
-            evt.target.classList.toggle("fade");
-        }
-
-
 
     </script>
 </body>
